@@ -1,0 +1,8 @@
+# docker build -f Dockerfile.dev .
+# docker run imageId
+FROM node:alpine
+WORKDIR '/app'
+COPY ./package.json ./
+RUN npm install
+COPY . .
+CMD ["npm", "run", "start" ]
