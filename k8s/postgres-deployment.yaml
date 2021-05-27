@@ -19,7 +19,7 @@ spec:
       containers:
         - name: postgres
           env:
-            - name: POSTGRES_PASSWORD
+            - name: PGPASSWORD
               valueFrom:
                 secretKeyRef:
                   name: pgpassword

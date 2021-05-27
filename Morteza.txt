@@ -1,0 +1,28 @@
+### alias for commands in power-shell
+
+## Setting kubectl to k
+> Set-Alias -Name k -value kubectl
+###########################################
+Start minikube in windows with hyber-v driver
+
+using powerShell in Admin mode.
+> minikube start --vm=true --driver=hyperv
+
+###################################
+Create secrect impretive, using command line in the computer
+This should be done in any environment, which we deploy the application
+
+> kubectl create secret generic <secret-name> --from-literal key=value
+
+> kubectl create secret generic pgpassword --from-literal PGPASSWORD=pgpassword123
+
+#######################################################
+Setup Ingress
+browse to:
+https://kubernetes.github.io/ingress-nginx/deploy/
+
+For local: find Docker Desktop and run the command from that section:
+> kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.46.0/deploy/static/provider/cloud/deploy.yaml
+
+And then for minikube
+> minikube addons enable ingress
